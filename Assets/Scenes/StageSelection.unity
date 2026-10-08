@@ -338,7 +338,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 206346673}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 622860270}
+        m_TargetAssemblyTypeName: Pattanakan_Methavikul.UIs.GameAppFlowButtons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stage_1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &206346673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,6 +772,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481760585}
   m_CullTransparentMesh: 1
+--- !u!1001 &622860269
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01287
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.83162
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.71772
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 123101241327977124, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047010853168977961, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+      propertyPath: m_Name
+      value: GameAppFlowButtons
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+--- !u!114 &622860270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5379745854109414389, guid: 5090310a067cbd340acdde7da3c28ec0, type: 3}
+  m_PrefabInstance: {fileID: 622860269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e94f4624f69ce43ab95c454d34fa6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pattanakan_Methavikul.UIs.GameAppFlowButtons
 --- !u!1 &697288884
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +1001,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 797258555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 622860270}
+        m_TargetAssemblyTypeName: Pattanakan_Methavikul.UIs.GameAppFlowButtons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stage_2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &797258555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2482,7 +2574,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2111310998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 622860270}
+        m_TargetAssemblyTypeName: Pattanakan_Methavikul.UIs.GameAppFlowButtons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2111310998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2529,3 +2633,4 @@ SceneRoots:
   - {fileID: 859174849}
   - {fileID: 455641895}
   - {fileID: 697288887}
+  - {fileID: 622860269}
