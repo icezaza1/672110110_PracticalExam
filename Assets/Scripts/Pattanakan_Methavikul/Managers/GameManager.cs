@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Pattanakan_Methavikul.Managers
 {
@@ -14,6 +15,7 @@ namespace Pattanakan_Methavikul.Managers
         public event Action<float> TimeChanged;
 
         private bool timerRunning;
+        private bool gameEnded = false;
 
         private void Awake()
         {
@@ -26,14 +28,24 @@ namespace Pattanakan_Methavikul.Managers
         }
         private void Update()
         {
-            if (!timerRunning || TimeRemaining <= 0f)
+            if (!timerRunning || TimeRemaining <= 0f || gameEnded)
                 return;
 
             TimeRemaining = Mathf.Max(0f, TimeRemaining - Time.deltaTime);
             TimeChanged?.Invoke(TimeRemaining);
 
             if (TimeRemaining <= 0f)
+            {
                 timerRunning = false;
+                if (Score >= 10000)
+                {
+                    EndGame(true);
+                }
+                else
+                {
+                    EndGame(false);
+                }
+            }
         }
 
         public void StartTimer() => timerRunning = true;
@@ -47,6 +59,15 @@ namespace Pattanakan_Methavikul.Managers
 
             ScoreChanged?.Invoke(Score);
             TimeChanged?.Invoke(TimeRemaining);
+        }
+
+        public void EndGame(bool win)
+        {
+            gameEnded = true;
+            if (win)
+                SceneManager.LoadSceneAsync("WinScene", LoadSceneMode.Additive);
+            else
+                SceneManager.LoadSceneAsync("GameOverScene", LoadSceneMode.Additive);
         }
     }
 }
