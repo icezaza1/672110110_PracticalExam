@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Pattanakan_Methavikul.Items;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -59,7 +61,6 @@ namespace Pattanakan_Methavikul.Player
             if (isGrounded && jumpPressed)
             {
                 rb.AddForce(Vector3.up * (sprintPressed ? jumpForce * 1.5f : jumpForce), ForceMode.Impulse);
-                Debug.Log("J");
             }
         }
 

@@ -11,6 +11,7 @@ namespace Pattanakan_Methavikul.Player
         public Vector2 MoveInput => playerInput?.actions["Move"].ReadValue<Vector2>() ?? Vector2.zero;
         public bool SprintPressed => playerInput?.actions["Sprint"].IsPressed() ?? false;
         public bool JumpPressed => playerInput?.actions["Jump"].WasPressedThisFrame() ?? false;
+        public bool InteractPressed => playerInput?.actions["Interact"].WasPressedThisFrame() ?? false;
 
         private void Awake()
         {
