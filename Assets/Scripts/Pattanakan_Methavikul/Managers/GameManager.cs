@@ -36,7 +36,6 @@ namespace Pattanakan_Methavikul.Managers
 
             if (TimeRemaining <= 0f)
             {
-                timerRunning = false;
                 if (Score >= 10000)
                 {
                     EndGame(true);
@@ -63,6 +62,7 @@ namespace Pattanakan_Methavikul.Managers
 
         public void EndGame(bool win)
         {
+            timerRunning = false;
             gameEnded = true;
             if (win)
                 SceneManager.LoadSceneAsync("WinScene", LoadSceneMode.Additive);
