@@ -1,7 +1,8 @@
+using Pattanakan_Methavikul.Items;
 using System;
 using System.Collections.Generic;
-using Pattanakan_Methavikul.Items;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Pattanakan_Methavikul.Player
@@ -61,6 +62,16 @@ namespace Pattanakan_Methavikul.Player
             if (isGrounded && jumpPressed)
             {
                 rb.AddForce(Vector3.up * (sprintPressed ? jumpForce * 1.5f : jumpForce), ForceMode.Impulse);
+            }
+
+            // Rotate Character
+            if (moveDir != Vector3.zero)
+            {
+                // Calculate the target rotation based on movement direction
+                Quaternion targetRotation = Quaternion.LookRotation(moveDir);
+
+                // Smoothly rotate toward the target direction over time
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5f * Time.deltaTime);
             }
         }
 

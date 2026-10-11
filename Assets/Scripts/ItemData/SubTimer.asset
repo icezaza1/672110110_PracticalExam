@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemEffectScriptableObjects
   scoreChange: 0
   timeChange: -5
+  onCollectedSound: {fileID: 8300000, guid: 4781b571c3d205147afac302c4092ccf, type: 3}

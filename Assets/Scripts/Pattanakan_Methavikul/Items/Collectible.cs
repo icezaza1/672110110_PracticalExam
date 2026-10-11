@@ -14,15 +14,24 @@ namespace Pattanakan_Methavikul.Items
     {
         [SerializeField] private ItemEffectScriptableObjects effect;
         [SerializeField] private CollectType collectType;
+        private MeshRenderer meshRenderer;
+        private Collider myCollider;
         private GameManager gameManager;
+        private AudioSource audioSource;
+        private bool isCollected = false;
 
         private void Awake()
         {
             gameManager = FindAnyObjectByType<GameManager>();
+            audioSource = GetComponent<AudioSource>();
+            meshRenderer = GetComponent<MeshRenderer>();
+            myCollider = GetComponent<Collider>();
+
+            audioSource.clip = effect.onCollectedSound;
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.CompareTag("Player")) return;
+            if (!other.CompareTag("Player") || isCollected) return;
 
             if (collectType == CollectType.Collision)
             {
@@ -46,8 +55,14 @@ namespace Pattanakan_Methavikul.Items
 
         public void CollectItem()
         {
+            if (isCollected) return;
+
             gameManager.Apply(effect);
-            Destroy(gameObject);
+            audioSource.Play();
+            meshRenderer.enabled = false;
+            myCollider.enabled = false;
+            isCollected = true;
+            Destroy(gameObject, audioSource.clip.length);
         }
     }
 }

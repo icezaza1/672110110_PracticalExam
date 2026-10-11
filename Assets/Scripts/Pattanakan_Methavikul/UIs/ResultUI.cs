@@ -8,27 +8,28 @@ namespace Pattanakan_Methavikul.UIs
     public class ResultUI : MonoBehaviour
     {
         [SerializeField] private TMP_Text scoreText;
-        [SerializeField] private string mainSceneName = "Stage_1";
+        [SerializeField] private AudioClip endSound;
+        private AudioSource audioSource;
 
         private GameManager gameManager;
 
         private void Awake()
         {
             gameManager = FindAnyObjectByType<GameManager>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
         {
             scoreText.text = $"Final Score: {gameManager.Score}";
+            audioSource.PlayOneShot(endSound);
         }
 
         public void Retry()
         {
-            // Remove the currently loaded result scene.
-            SceneManager.UnloadSceneAsync(gameObject.scene);
-
-            // Reload the main stage as a fresh run.
-            SceneManager.LoadSceneAsync(mainSceneName, LoadSceneMode.Single);
+            // Find game manager in that scene then reload it
+            string stageSceneName = gameManager.gameObject.scene.name;
+            SceneManager.LoadSceneAsync(stageSceneName, LoadSceneMode.Single);
         }
     }
 }
